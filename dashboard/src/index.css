@@ -1,0 +1,263 @@
+/* index.css - refined styling matching Default Design Guidelines */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #6b7280;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #9ca3af;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  color: #111827;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+body.dark h1, 
+body.dark h2, 
+body.dark h3, 
+body.dark h4, 
+body.dark h5,
+body.dark h6 {
+  color: #e0e0e0;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 16px;
+  color: inherit;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus {
+  color: #1d4ed8;
+  outline: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+button:hover,
+button:focus {
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 16px rgba(29, 78, 216, 0.6);
+  outline: none;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  background-color: #94a3b8;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px 15px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #111827;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+  background-color: #fff;
+  outline: none;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background-color: #1f2937;
+  color: #e5e7eb;
+  border-color: #374151;
+}
+
+body.dark input:focus,
+body.dark select:focus,
+body.dark textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  background-color: #111827;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem 6rem;
+}
+
+/* Header styles */
+header {
+  position: sticky;
+  top: 0;
+  background-color: #ffffffcc;
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  z-index: 999;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  user-select: none;
+}
+
+body.dark header {
+  background-color: #1f2937cc;
+  border-bottom-color: #374151;
+}
+
+header .nav-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  margin-left: 2rem;
+  font-weight: 600;
+  color: #374151;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+body.dark nav a {
+  color: #9ca3af;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #2563eb;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #2563eb;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+}
+
+/* Dim and hidden text in dark mode */
+
+.dimmed {
+  color: #6b7280;
+  opacity: 1;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+body.dark .dimmed {
+  color: #9ca3af;
+  opacity: 0.3;
+  user-select: none;
+}
+
+/* Profile link styles */
+
+.profile-link {
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: inline-block;
+}
+
+.profile-link:hover,
+.profile-link:focus {
+  background-color: #e0e7ff;
+  outline: none;
+}
+
+/* Utility classes */
+
+.hidden {
+  display: none !important;
+}
+
+body {
+  background-color: #ffffff; /* Light mode background */
+  color: #6b7280; /* Light mode text color */
+}
+
+body.dark {
+  background-color: #121212; /* Dark mode background */
+  color: #e0e0e0; /* Dark mode text color */
+}
